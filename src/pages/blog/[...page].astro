@@ -8,15 +8,14 @@ export async function getStaticPaths({ paginate }) {
   const sortedPosts = allPosts.sort(
     (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
   );
-  return paginate(sortedPosts, { pageSize: 4 });
+  return paginate(sortedPosts, { pageSize: 2 });
 }
 
 const { page } = Astro.props;
 const p = page as unknown as any;
 
-const pageTitle = "Domenico Tenace - Blog";
-const pageDescription =
-  "I write articles about the technologies I use the most and share my experiences";
+const pageTitle = "Pure Astro";
+const pageDescription = "Simple blog template made with Astro and pure CSS";
 ---
 
 <Layout pageTitle={pageTitle} pageDescription={pageDescription}>
